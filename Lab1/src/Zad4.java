@@ -1,5 +1,7 @@
 package Lab1.src;
 
+import java.math.BigInteger;
+
 public class Zad4 {
     private static final int[] CRC_TABLE = new int[256];
 
@@ -15,7 +17,7 @@ public class Zad4 {
         int dec = crc32("This is example text ...");
         String bin = Integer.toBinaryString(dec);
 
-        System.out.println(bin);
+        System.out.println(new BigInteger(bin, 2).longValue());
     }
 
     private static int crc32(String text) {
