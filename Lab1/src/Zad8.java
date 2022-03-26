@@ -1,16 +1,14 @@
 package Lab1.src;
 
- import com.fasterxml.jackson.core.JsonProcessingException;
- import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class Zad7 {
+public class Zad8 {
     private static class Animal {
         private String name;
         private String breed;
 
-        public Animal(String name, String breed) {
-            this.name = name;
-            this.breed = breed;
+        public Animal() {
         }
 
         public String getName() {
@@ -25,15 +23,15 @@ public class Zad7 {
     public static void main(String[] args) {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        Animal test = new Animal("Moris", "Lemur");
-
-        String testJson = null;
+        String animalJson = "{\"name\":\"Burek\",\"breed\":\"Pies\"}";
+        Animal animalObject = null;
         try {
-            testJson = objectMapper.writeValueAsString(test);
+            animalObject = objectMapper.readValue(animalJson, Animal.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
 
-        System.out.println(testJson);
+        System.out.println(animalObject.getName());
+        System.out.println(animalObject.getBreed());
     }
 }

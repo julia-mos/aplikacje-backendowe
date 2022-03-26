@@ -12,7 +12,10 @@ public class Zad4 {
             CRC_TABLE[i] = code;
         }
 
-        System.out.println(crc32("This is example text ..."));
+        int dec = crc32("This is example text ...");
+        String bin = Integer.toBinaryString(dec);
+
+        System.out.println(bin);
     }
 
     private static int crc32(String text) {
