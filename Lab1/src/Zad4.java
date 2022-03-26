@@ -1,3 +1,5 @@
+package Lab1.src;
+
 public class Zad4 {
     private static final int[] CRC_TABLE = new int[256];
 
